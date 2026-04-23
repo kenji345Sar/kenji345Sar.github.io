@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>業務システムの設計・実装・改修(直近) | 業務システム支援</title>
+  <meta name="description" content="要件が明確でない状態から、ドメインモデル整理とC#/ASP.NET Core・React/TypeScriptによる設計・実装・改修を短期間で進めた事例。" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="./" class="site-title">業務システム支援</a>
+      <nav class="site-nav">
+        <a href="index.html#services">サービス</a>
+        <a href="index.html#works">実績</a>
+        <a href="index.html#about">プロフィール</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <a class="back-link" href="index.html#works">← 実績一覧に戻る</a>
+        <h1>業務システムの設計・実装・改修(直近)</h1>
+        <p class="case-meta">
+          <span>期間: 約3ヶ月</span>
+          <span>技術: C# / ASP.NET Core / React / TypeScript</span>
+          <span>体制: 少人数チーム</span>
+          <span>担当領域: バックエンド + フロントエンド 両方</span>
+        </p>
+
+        <div class="case-section">
+          <h3>案件概要</h3>
+          <p>
+            業務システムの設計・実装・改修に参画。業務ルールや履歴管理を前提とした
+            データ構造の整理から、API・画面側の改修、データ不整合の調査・修正まで、
+            バックエンドとフロントエンドをまたいで一連で担当した案件です。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>課題</h3>
+          <ul>
+            <li>要件が十分に整理されておらず、業務ルール・ドメイン概念から押さえる必要があった</li>
+            <li>履歴や残高のように、時間軸とデータ整合性を両立させる必要がある業務領域</li>
+            <li>一覧表示・取引履歴・計算結果などの整合性が崩れた状態のデータ調査・修正</li>
+            <li>未経験の技術スタックを含む中で、短期間で形にすることが求められた</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>進め方</h3>
+          <ul>
+            <li>業務ルールとドメインモデルの整理を起点に、実装に落とし込むための概念整理から着手</li>
+            <li>業務側の要求があいまいな段階でも、画面・データ・処理の関係を確認しながら機能化</li>
+            <li>AIを活用しながら、未経験領域を含む設計検討・コード生成・改修案作成を並行</li>
+            <li>不整合データの確認 → 原因切り分け → 修正方針の整理 → 反映 → 再確認 を一連で実施</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>担当範囲</h3>
+          <p>フロント / バックエンドの <strong>2領域(主要4技術スタック)</strong> にまたがって対応。<strong>複数の機能領域</strong> について、ドメイン整理から実装・調査修正までを担当しました。</p>
+          <ul>
+            <li>業務領域に関するドメインモデル整理・設計検討(複数機能領域)</li>
+            <li>バックエンド(C# / ASP.NET Core)の改修、API修正、データ処理ロジック実装</li>
+            <li>フロントエンド(React / TypeScript)の画面修正、表示内容調整、操作フロー改善</li>
+            <li>状態遷移とデータ整合性に関する調査・修正(不整合の原因切り分け → 修正方針整理 → 反映 → 再確認まで一連で対応)</li>
+            <li>フロントとバックエンド 2領域をまたいだ不具合調査・動作確認・修正対応</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>意識したこと</h3>
+          <ul>
+            <li>要件が曖昧な状態でも止まらず、論点整理 → 試作 → 実装 → 修正まで小さく進める</li>
+            <li>履歴管理や残高遷移など、後からズレると直しにくい領域は、最初にデータ構造で揃える</li>
+            <li>既存業務・既存データを踏まえ、運用を意識した修正を選ぶ</li>
+            <li>AIで一気に生成するのではなく、業務ルールに合わせて取捨選択・調整する</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>今から見て</h3>
+          <p>
+            要件が十分に整理されていない状態から、ドメイン整理と実装を並行で進める
+            案件では、「何を作るか」より先に「どう崩れないようにするか」を決めることが
+            効果的でした。同じように、仕様が固まりきらない段階の業務システムに対して、
+            整理しながら短期で形にする関わり方ができます。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <p>
+            類似の案件・ご相談は
+            <a href="index.html#contact">お問い合わせ</a>
+            からお気軽にご連絡ください。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> 業務システム支援</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

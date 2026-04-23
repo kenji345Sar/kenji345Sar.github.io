@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>社内業務の効率化・連携対応 | 業務システム支援</title>
+  <meta name="description" content="Excelや紙で回っていた申請・稟議系業務をkintoneとLaravel APIで整理し、VBA補助・レガシー保守を並行で進めた事例。" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="./" class="site-title">業務システム支援</a>
+      <nav class="site-nav">
+        <a href="index.html#services">サービス</a>
+        <a href="index.html#works">実績</a>
+        <a href="index.html#about">プロフィール</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <a class="back-link" href="index.html#works">← 実績一覧に戻る</a>
+        <h1>社内業務の効率化・連携対応</h1>
+        <p class="case-meta">
+          <span>期間: 約9ヶ月</span>
+          <span>技術: Laravel 8 / PHP / kintone / VBA / JavaScript / Oracle / MySQL</span>
+          <span>チーム: 3名</span>
+          <span>担当工程: 要件定義〜保守運用(全工程)</span>
+        </p>
+
+        <div class="case-section">
+          <h3>案件概要</h3>
+          <p>
+            業務ごとに Excel・紙・独立したシステムが混在し、二重入力や手作業が
+            発生していた状態から、申請・稟議系業務の Web 化と、既存業務・既存システム
+            との連携整理を進めた案件です。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>課題</h3>
+          <ul>
+            <li>申請・稟議系の業務が紙や Excel 中心で、回覧や履歴追跡に手間がかかっていた</li>
+            <li>経費精算や押印など、業務ごとに独立した運用になっており、データが分散していた</li>
+            <li>既存のレガシーシステム(PHP4 / Oracle)の保守も並行して必要で、完全入れ替えは現実的ではなかった</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>進め方</h3>
+          <ul>
+            <li>現行業務を整理し、どこをローコード(kintone)で、どこを Laravel API で扱うかを仕分け</li>
+            <li>既存業務を止めないことを前提に、小さく切り出して順に Web 化</li>
+            <li>API・バッチ処理・VBA など、複数の手段を用途ごとに使い分けて連携</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>担当範囲</h3>
+          <p>計 <strong>4つの業務テーマ</strong> を並行で担当。ローコード(kintone)と API 開発(Laravel)、レガシー保守を用途に応じて使い分けました。</p>
+          <ul>
+            <li>事業部門管理資料のバッチ処理化(Laravel API 作成、VBA 側の対応)</li>
+            <li>経費精算まわりの見直し(既存ツールと kintone との連携)</li>
+            <li>押印・稟議運用の Web 化(紙運用から kintone への移行)</li>
+            <li>既存レガシーシステム(PHP4 / Oracle)の保守対応</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>意識したこと</h3>
+          <ul>
+            <li>ローコードと API 開発の「使い分け」。kintone で十分なものは無理に作らない</li>
+            <li>既存業務の運用リズムを崩さないよう、段階的に移行する</li>
+            <li>レガシー保守と新規開発の並行を前提に、共有できる部分は揃える</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>今から見て</h3>
+          <p>
+            こういう案件の価値は、Web 化そのものではなく、業務と既存システム・
+            既存運用をつなぎ直す部分にあると考えています。同じように
+            「全部入れ替えは難しいが、このまま回すのも厳しい」という状況に対して、
+            小さく整えていく関わり方ができます。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <p>
+            類似の案件・ご相談は
+            <a href="index.html#contact">お問い合わせ</a>
+            からお気軽にご連絡ください。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> 業務システム支援</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
