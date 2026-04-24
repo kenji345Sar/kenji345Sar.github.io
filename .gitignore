@@ -9,3 +9,6 @@
 *.log
 *.tmp
 *~
+
+# Internal notes (not for public GitHub Pages)
+docs/
