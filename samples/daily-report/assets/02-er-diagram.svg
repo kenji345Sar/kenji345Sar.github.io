@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 540" role="img" aria-label="配送日報のER図（概念）">
+  <defs>
+    <style>
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; }
+      .h { font-size: 13px; font-weight: 700; fill: #ffffff; }
+      .t { font-size: 11px; fill: #1f1f1f; }
+      .pk { font-size: 11px; fill: #1f1f1f; font-weight: 700; }
+      .fk { font-size: 11px; fill: #2563eb; }
+      .m { font-size: 10px; fill: #666; }
+    </style>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect width="980" height="540" fill="#ffffff"/>
+
+  <text x="490" y="28" text-anchor="middle" class="label" font-size="16" font-weight="700" fill="#1f1f1f">ER図（概念）</text>
+  <text x="490" y="46" text-anchor="middle" class="label" font-size="11" fill="#666">主要7テーブル＋AI第2版以降の `report_summaries`</text>
+
+  <!-- masters left column -->
+  <!-- users -->
+  <g>
+    <rect x="40" y="80" width="180" height="100" rx="6" fill="#ffffff" stroke="#1f1f1f"/>
+    <rect x="40" y="80" width="180" height="22" rx="6" fill="#1f1f1f"/>
+    <text x="50" y="96" class="label h">users（利用者）</text>
+    <text x="50" y="118" class="label pk">PK  id</text>
+    <text x="50" y="134" class="label t">code, name, role</text>
+    <text x="50" y="150" class="label t">active</text>
+    <text x="50" y="170" class="label m">role: driver / office / admin</text>
+  </g>
+
+  <!-- customers -->
+  <g>
+    <rect x="40" y="220" width="180" height="100" rx="6" fill="#ffffff" stroke="#1f1f1f"/>
+    <rect x="40" y="220" width="180" height="22" rx="6" fill="#1f1f1f"/>
+    <text x="50" y="236" class="label h">customers（配送先）</text>
+    <text x="50" y="258" class="label pk">PK  id</text>
+    <text x="50" y="274" class="label t">code, name, address</text>
+    <text x="50" y="290" class="label t">area, note</text>
+    <text x="50" y="306" class="label t">active</text>
+  </g>
+
+  <!-- items -->
+  <g>
+    <rect x="40" y="360" width="180" height="100" rx="6" fill="#ffffff" stroke="#1f1f1f"/>
+    <rect x="40" y="360" width="180" height="22" rx="6" fill="#1f1f1f"/>
+    <text x="50" y="376" class="label h">items（品目）</text>
+    <text x="50" y="398" class="label pk">PK  id</text>
+    <text x="50" y="414" class="label t">code, name, unit</text>
+    <text x="50" y="430" class="label t">category</text>
+    <text x="50" y="446" class="label t">active</text>
+  </g>
+
+  <!-- daily_reports center -->
+  <g>
+    <rect x="320" y="120" width="220" height="160" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <rect x="320" y="120" width="220" height="22" rx="6" fill="#2563eb"/>
+    <text x="330" y="136" class="label h">daily_reports（日報ヘッダ）</text>
+    <text x="330" y="158" class="label pk">PK  id</text>
+    <text x="330" y="174" class="label fk">FK  driver_id → users</text>
+    <text x="330" y="190" class="label t">report_date, shift</text>
+    <text x="330" y="206" class="label t">depart_at, return_at</text>
+    <text x="330" y="222" class="label t">odometer_start/end</text>
+    <text x="330" y="238" class="label t">memo, has_incident</text>
+    <text x="330" y="254" class="label t">status, submitted_at</text>
+    <text x="330" y="272" class="label m">UNIQUE(date, driver, shift)</text>
+  </g>
+
+  <!-- daily_report_lines -->
+  <g>
+    <rect x="600" y="120" width="220" height="120" rx="6" fill="#ffffff" stroke="#1f1f1f"/>
+    <rect x="600" y="120" width="220" height="22" rx="6" fill="#1f1f1f"/>
+    <text x="610" y="136" class="label h">daily_report_lines（明細）</text>
+    <text x="610" y="158" class="label pk">PK  id</text>
+    <text x="610" y="174" class="label fk">FK  daily_report_id</text>
+    <text x="610" y="190" class="label fk">FK  customer_id</text>
+    <text x="610" y="206" class="label t">seq, arrived_at</text>
+    <text x="610" y="222" class="label t">memo</text>
+  </g>
+
+  <!-- daily_report_line_items -->
+  <g>
+    <rect x="600" y="270" width="220" height="120" rx="6" fill="#ffffff" stroke="#1f1f1f"/>
+    <rect x="600" y="270" width="220" height="22" rx="6" fill="#1f1f1f"/>
+    <text x="610" y="286" class="label h">daily_report_line_items</text>
+    <text x="610" y="308" class="label pk">PK  id</text>
+    <text x="610" y="324" class="label fk">FK  daily_report_line_id</text>
+    <text x="610" y="340" class="label fk">FK  item_id</text>
+    <text x="610" y="356" class="label t">quantity, is_shortage</text>
+    <text x="610" y="372" class="label t">note</text>
+  </g>
+
+  <!-- incidents -->
+  <g>
+    <rect x="320" y="320" width="220" height="100" rx="6" fill="#ffffff" stroke="#1f1f1f"/>
+    <rect x="320" y="320" width="220" height="22" rx="6" fill="#1f1f1f"/>
+    <text x="330" y="336" class="label h">incidents（異常）</text>
+    <text x="330" y="358" class="label pk">PK  id</text>
+    <text x="330" y="374" class="label fk">FK  daily_report_id</text>
+    <text x="330" y="390" class="label t">kind, severity, description</text>
+  </g>
+
+  <!-- report_summaries (AI) -->
+  <g>
+    <rect x="600" y="420" width="320" height="90" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-dasharray="6 3"/>
+    <rect x="600" y="420" width="320" height="22" rx="6" fill="#ea580c"/>
+    <text x="610" y="436" class="label h">report_summaries（AI第2版以降）</text>
+    <text x="610" y="458" class="label pk">PK  id</text>
+    <text x="610" y="474" class="label t">scope（daily/weekly/driver）, target_date</text>
+    <text x="610" y="490" class="label t">summary, model, generated_at</text>
+  </g>
+
+  <!-- relationships -->
+  <!-- users → daily_reports -->
+  <line x1="220" y1="130" x2="318" y2="170" stroke="#2563eb" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="240" y="142" class="label m">1 : N</text>
+
+  <!-- daily_reports → daily_report_lines -->
+  <line x1="540" y1="170" x2="598" y2="170" stroke="#2563eb" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="552" y="162" class="label m">1 : N</text>
+
+  <!-- daily_report_lines → daily_report_line_items -->
+  <line x1="710" y1="240" x2="710" y2="268" stroke="#2563eb" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="718" y="258" class="label m">1 : N</text>
+
+  <!-- customers → daily_report_lines -->
+  <line x1="220" y1="270" x2="598" y2="200" stroke="#2563eb" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="350" y="252" class="label m">N : 1</text>
+
+  <!-- items → daily_report_line_items -->
+  <line x1="220" y1="400" x2="598" y2="340" stroke="#2563eb" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="360" y="382" class="label m">N : 1</text>
+
+  <!-- daily_reports → incidents -->
+  <line x1="430" y1="282" x2="430" y2="318" stroke="#2563eb" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="438" y="306" class="label m">1 : N</text>
+
+  <!-- daily_reports → report_summaries (dashed, AI later) -->
+  <path d="M 540 240 Q 700 360 700 418" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="5 3" fill="none" marker-end="url(#ar)"/>
+  <text x="650" y="370" class="label m" fill="#9a3412">AI生成</text>
+</svg>

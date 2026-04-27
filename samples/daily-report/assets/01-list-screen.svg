@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" role="img" aria-label="日報一覧・検索画面のワイヤーフレーム">
+  <defs>
+    <style>
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; }
+      .h { font-size: 14px; font-weight: 700; fill: #1f1f1f; }
+      .t { font-size: 12px; fill: #1f1f1f; }
+      .m { font-size: 11px; fill: #666; }
+      .a { font-size: 12px; fill: #2563eb; font-weight: 700; }
+      .alert { fill: #c2410c; font-weight: 700; }
+    </style>
+  </defs>
+  <rect width="900" height="540" fill="#ffffff"/>
+
+  <text x="450" y="28" text-anchor="middle" class="label h" font-size="16">S2. 日報一覧・検索画面（事務／管理者向け）</text>
+
+  <!-- browser frame -->
+  <g transform="translate(40,60)">
+    <rect x="0" y="0" width="820" height="450" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="1.5"/>
+
+    <!-- browser bar -->
+    <rect x="0" y="0" width="820" height="28" fill="#f0f0ee"/>
+    <circle cx="14" cy="14" r="4" fill="#cccccc"/>
+    <circle cx="28" cy="14" r="4" fill="#cccccc"/>
+    <circle cx="42" cy="14" r="4" fill="#cccccc"/>
+    <rect x="80" y="6" width="640" height="16" rx="3" fill="#ffffff" stroke="#dddddd"/>
+    <text x="92" y="18" class="label m">https://daily.maruki-foods.example/</text>
+
+    <!-- header -->
+    <rect x="0" y="28" width="820" height="40" fill="#2563eb"/>
+    <text x="20" y="54" class="label" font-size="14" font-weight="700" fill="#ffffff">配送日報　／　一覧・検索</text>
+    <text x="800" y="54" text-anchor="end" class="label" font-size="12" fill="#cfd9ff">事務：山田　▾</text>
+
+    <!-- search & filters -->
+    <rect x="20" y="82" width="780" height="50" rx="6" fill="#f7f7f5" stroke="#e5e5e5"/>
+
+    <text x="32" y="100" class="label m">期間</text>
+    <rect x="32" y="106" width="180" height="20" rx="3" fill="#ffffff" stroke="#cccccc"/>
+    <text x="40" y="120" class="label t">2026-04-08 〜 2026-04-15</text>
+
+    <text x="228" y="100" class="label m">配送員</text>
+    <rect x="228" y="106" width="100" height="20" rx="3" fill="#ffffff" stroke="#cccccc"/>
+    <text x="236" y="120" class="label t">全員　▾</text>
+
+    <text x="344" y="100" class="label m">便</text>
+    <rect x="344" y="106" width="76" height="20" rx="3" fill="#ffffff" stroke="#cccccc"/>
+    <text x="352" y="120" class="label t">全便　▾</text>
+
+    <text x="436" y="100" class="label m">自然文検索</text>
+    <rect x="436" y="106" width="280" height="20" rx="3" fill="#ffffff" stroke="#2563eb"/>
+    <text x="444" y="120" class="label t">先週の積み残しが出た便</text>
+    <rect x="724" y="106" width="60" height="20" rx="3" fill="#2563eb"/>
+    <text x="754" y="120" text-anchor="middle" class="label t" font-weight="700" fill="#ffffff">検索</text>
+
+    <!-- AI interpretation banner -->
+    <rect x="20" y="142" width="780" height="22" rx="3" fill="#eef2ff" stroke="#bfdbfe"/>
+    <text x="32" y="157" class="label" font-size="11" fill="#1e3a8a">AI解釈：期間=先週（4/8〜4/14）／is_shortage=true ／（条件をクリックで修正）</text>
+
+    <!-- table header -->
+    <rect x="20" y="174" width="780" height="28" fill="#eef2ff"/>
+    <text x="32" y="192" class="label t" font-weight="700">日付</text>
+    <text x="120" y="192" class="label t" font-weight="700">配送員</text>
+    <text x="200" y="192" class="label t" font-weight="700">便</text>
+    <text x="252" y="192" class="label t" font-weight="700">配送先（抜粋）</text>
+    <text x="500" y="192" class="label t" font-weight="700">品目数</text>
+    <text x="572" y="192" class="label t" font-weight="700">異常</text>
+    <text x="660" y="192" class="label t" font-weight="700">提出</text>
+
+    <!-- table rows -->
+    <g>
+      <rect x="20" y="202" width="780" height="32" fill="#ffffff"/>
+      <text x="32" y="222" class="label t">2026-04-14（月）</text>
+      <text x="120" y="222" class="label t">佐藤</text>
+      <text x="200" y="222" class="label t">午前</text>
+      <text x="252" y="222" class="label t">○○食堂、△△レストラン、…</text>
+      <text x="500" y="222" class="label t">12</text>
+      <rect x="566" y="208" width="76" height="18" rx="9" fill="#fee2e2"/>
+      <text x="604" y="221" text-anchor="middle" class="label" font-size="11" fill="#991b1b" font-weight="700">積み残し</text>
+      <text x="660" y="222" class="label t">12:45</text>
+    </g>
+
+    <g>
+      <rect x="20" y="234" width="780" height="32" fill="#fafafa"/>
+      <text x="32" y="254" class="label t">2026-04-12（土）</text>
+      <text x="120" y="254" class="label t">田中</text>
+      <text x="200" y="254" class="label t">午後</text>
+      <text x="252" y="254" class="label t">□□酒店、◇◇商店、…</text>
+      <text x="500" y="254" class="label t">8</text>
+      <rect x="566" y="240" width="100" height="18" rx="9" fill="#fee2e2"/>
+      <text x="616" y="253" text-anchor="middle" class="label" font-size="11" fill="#991b1b" font-weight="700">積み残し+苦情</text>
+      <text x="660" y="254" class="label t">17:20</text>
+    </g>
+
+    <g>
+      <rect x="20" y="266" width="780" height="32" fill="#ffffff"/>
+      <text x="32" y="286" class="label t">2026-04-10（木）</text>
+      <text x="120" y="286" class="label t">佐藤</text>
+      <text x="200" y="286" class="label t">午前</text>
+      <text x="252" y="286" class="label t">○○食堂、◎◎パン店、…</text>
+      <text x="500" y="286" class="label t">10</text>
+      <rect x="566" y="272" width="76" height="18" rx="9" fill="#fee2e2"/>
+      <text x="604" y="285" text-anchor="middle" class="label" font-size="11" fill="#991b1b" font-weight="700">積み残し</text>
+      <text x="660" y="286" class="label t">12:30</text>
+    </g>
+
+    <g>
+      <rect x="20" y="298" width="780" height="32" fill="#fafafa"/>
+      <text x="32" y="318" class="label t">2026-04-09（水）</text>
+      <text x="120" y="318" class="label t">高橋</text>
+      <text x="200" y="318" class="label t">午後</text>
+      <text x="252" y="318" class="label t">▽▽屋、…</text>
+      <text x="500" y="318" class="label t">5</text>
+      <rect x="566" y="304" width="76" height="18" rx="9" fill="#fee2e2"/>
+      <text x="604" y="317" text-anchor="middle" class="label" font-size="11" fill="#991b1b" font-weight="700">積み残し</text>
+      <text x="660" y="318" class="label t">17:05</text>
+    </g>
+
+    <!-- footer / actions -->
+    <line x1="20" y1="342" x2="800" y2="342" stroke="#e5e5e5"/>
+    <text x="32" y="362" class="label m">4件 ヒット　／　全23件中</text>
+    <rect x="640" y="350" width="76" height="22" rx="3" fill="#ffffff" stroke="#1f1f1f"/>
+    <text x="678" y="365" text-anchor="middle" class="label t">CSV出力</text>
+    <rect x="724" y="350" width="76" height="22" rx="3" fill="#2563eb"/>
+    <text x="762" y="365" text-anchor="middle" class="label t" font-weight="700" fill="#ffffff">サマリ生成</text>
+
+    <!-- note bottom -->
+    <text x="32" y="400" class="label m">※ 行クリックで日報詳細（読み取り専用、管理者は編集可）</text>
+    <text x="32" y="418" class="label m">※ 異常はアイコン＋色＋テキストで表示（色だけに依存しない）</text>
+  </g>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="日報入力画面（スマホ）のワイヤーフレーム">
+  <defs>
+    <style>
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; }
+      .h { font-size: 14px; font-weight: 700; fill: #1f1f1f; }
+      .t { font-size: 12px; fill: #1f1f1f; }
+      .m { font-size: 11px; fill: #666; }
+      .a { font-size: 12px; fill: #2563eb; font-weight: 700; }
+    </style>
+  </defs>
+  <rect width="800" height="520" fill="#ffffff"/>
+
+  <!-- title -->
+  <text x="400" y="28" text-anchor="middle" class="label h" font-size="16">S1. 日報入力画面（スマホ／タブレット）</text>
+
+  <!-- phone frame -->
+  <g transform="translate(60,60)">
+    <rect x="0" y="0" width="260" height="430" rx="24" fill="#fafafa" stroke="#1f1f1f" stroke-width="2"/>
+    <rect x="14" y="14" width="232" height="402" rx="14" fill="#ffffff" stroke="#e5e5e5"/>
+
+    <!-- top bar -->
+    <rect x="14" y="14" width="232" height="36" fill="#2563eb"/>
+    <text x="130" y="36" text-anchor="middle" class="label" font-size="13" font-weight="700" fill="#ffffff">配送日報　佐藤</text>
+
+    <!-- date -->
+    <text x="28" y="72" class="label m">日付（自動）</text>
+    <rect x="28" y="80" width="204" height="24" rx="4" fill="#f7f7f5" stroke="#e5e5e5"/>
+    <text x="36" y="97" class="label t">2026-04-15（火）</text>
+
+    <!-- shift buttons -->
+    <text x="28" y="124" class="label m">便</text>
+    <rect x="28" y="132" width="60" height="28" rx="14" fill="#2563eb"/>
+    <text x="58" y="151" text-anchor="middle" class="label t" font-weight="700" fill="#ffffff">午前</text>
+    <rect x="94" y="132" width="60" height="28" rx="14" fill="#ffffff" stroke="#1f1f1f"/>
+    <text x="124" y="151" text-anchor="middle" class="label t">午後</text>
+    <rect x="160" y="132" width="60" height="28" rx="14" fill="#ffffff" stroke="#1f1f1f"/>
+    <text x="190" y="151" text-anchor="middle" class="label t">臨時</text>
+
+    <!-- customers -->
+    <text x="28" y="184" class="label m">配送先（複数追加可）</text>
+    <rect x="28" y="192" width="204" height="32" rx="4" fill="#f7f7f5" stroke="#e5e5e5"/>
+    <text x="36" y="212" class="label t">○○食堂　K0102</text>
+    <text x="222" y="212" text-anchor="end" class="label a">▾</text>
+    <rect x="28" y="228" width="204" height="32" rx="4" fill="#f7f7f5" stroke="#e5e5e5"/>
+    <text x="36" y="248" class="label t">△△レストラン　K0118</text>
+    <text x="222" y="248" text-anchor="end" class="label a">▾</text>
+    <rect x="28" y="264" width="204" height="28" rx="4" fill="#ffffff" stroke="#2563eb" stroke-dasharray="4 3"/>
+    <text x="130" y="282" text-anchor="middle" class="label a">＋ 配送先を追加</text>
+
+    <!-- time -->
+    <text x="28" y="312" class="label m">出発／帰庫時刻</text>
+    <rect x="28" y="320" width="96" height="28" rx="4" fill="#f7f7f5" stroke="#e5e5e5"/>
+    <text x="76" y="339" text-anchor="middle" class="label t">08:30</text>
+    <rect x="136" y="320" width="96" height="28" rx="4" fill="#f7f7f5" stroke="#e5e5e5"/>
+    <text x="184" y="339" text-anchor="middle" class="label t">12:45</text>
+
+    <!-- incident toggle -->
+    <rect x="28" y="360" width="204" height="28" rx="4" fill="#fff7ed" stroke="#ea580c"/>
+    <circle cx="42" cy="374" r="6" fill="#ea580c"/>
+    <text x="58" y="378" class="label t" fill="#9a3412" font-weight="700">異常・ヒヤリハットあり</text>
+
+    <!-- submit -->
+    <rect x="28" y="395" width="204" height="14" fill="none"/>
+    <text x="130" y="406" text-anchor="middle" class="label m">↓ スクロールで残り入力</text>
+  </g>
+
+  <!-- annotations -->
+  <g transform="translate(360,80)">
+    <text x="0" y="0" class="label h">設計の考え方</text>
+
+    <circle cx="6" cy="22" r="3" fill="#2563eb"/>
+    <text x="16" y="26" class="label t">入力項目を最小化（片手・グローブ越し前提）</text>
+
+    <circle cx="6" cy="48" r="3" fill="#2563eb"/>
+    <text x="16" y="52" class="label t">マスタはプルダウン＋予測候補で選ぶだけ</text>
+
+    <circle cx="6" cy="74" r="3" fill="#2563eb"/>
+    <text x="16" y="78" class="label t">数量・時刻はステッパー／ピッカー</text>
+
+    <circle cx="6" cy="100" r="3" fill="#2563eb"/>
+    <text x="16" y="104" class="label t">通信切れ時もローカル保存→復帰時に同期</text>
+
+    <circle cx="6" cy="126" r="3" fill="#2563eb"/>
+    <text x="16" y="130" class="label t">当日中は再編集可（紙時代の赤ペン直し相当）</text>
+
+    <text x="0" y="170" class="label h">主要な入力フィールド</text>
+
+    <rect x="0" y="180" width="380" height="160" fill="#f7f7f5" stroke="#e5e5e5" rx="6"/>
+    <text x="12" y="200" class="label t">日付　— 自動</text>
+    <text x="12" y="220" class="label t">配送員　— 自動（ログイン）</text>
+    <text x="12" y="240" class="label t">便　— 午前／午後／臨時</text>
+    <text x="12" y="260" class="label t">配送先　— マスタ＋予測候補</text>
+    <text x="12" y="280" class="label t">品目・数量　— マスタ＋ステッパー</text>
+    <text x="12" y="300" class="label t">出発／帰庫　— タイムピッカー</text>
+    <text x="12" y="320" class="label t">異常・メモ　— 自由記入（音声入力可）</text>
+  </g>
+</svg>

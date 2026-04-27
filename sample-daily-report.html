@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>配送日報Web化 サンプル成果物 | 業務システム支援</title>
+  <meta name="description" content="Excel・紙運用のWeb化の納品物の質感を見ていただくためのサンプル一式。架空の食品卸の配送日報Web化を題材に、要件定義・画面設計・データ設計・AI活用・段階リリース計画を実例として作成しました。" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSGY8PW4ZS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YSGY8PW4ZS');
+  </script>
+  <style>
+    .sample-toc { background: #f7f7f5; border: 1px solid #e5e5e5; border-radius: 8px; padding: 1em 1.5em; margin: 1em 0 2em; }
+    .sample-toc ol { margin: 0.5em 0 0 1.2em; padding: 0; }
+    .sample-toc li { margin: 0.3em 0; }
+    .sample-figure { margin: 1.5em 0; text-align: center; }
+    .sample-figure img, .sample-figure object { max-width: 100%; height: auto; border: 1px solid #e5e5e5; border-radius: 6px; background: #ffffff; }
+    .sample-figure figcaption { font-size: 0.85em; color: #666; margin-top: 0.5em; }
+    .sample-table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.92em; }
+    .sample-table th, .sample-table td { border: 1px solid #d4d4d4; padding: 0.6em 0.8em; text-align: left; vertical-align: top; }
+    .sample-table th { background: #eef2ff; font-weight: 700; }
+    .sample-table tr:nth-child(even) td { background: #fafafa; }
+    .sample-callout { background: #fff7ed; border-left: 4px solid #ea580c; padding: 0.8em 1.2em; margin: 1em 0; border-radius: 0 6px 6px 0; }
+    .sample-callout strong { color: #c2410c; }
+    .ai-tag { display: inline-block; padding: 0.15em 0.6em; border-radius: 4px; font-size: 0.85em; font-weight: 700; }
+    .ai-strong { background: #dcfce7; color: #166534; }
+    .ai-partial { background: #fef3c7; color: #92400e; }
+    .ai-none { background: #fee2e2; color: #991b1b; }
+    .download-list { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 1em 1.5em; margin: 1em 0; }
+    .download-list ul { margin: 0.5em 0 0 1.2em; padding: 0; }
+    .download-list li { margin: 0.3em 0; font-size: 0.95em; }
+    .phase-box { background: #f7f7f5; border-left: 4px solid #2563eb; padding: 0.8em 1.2em; margin: 0.8em 0; border-radius: 0 6px 6px 0; }
+    .phase-box h4 { margin: 0 0 0.3em; color: #1e3a8a; }
+    .related-sample { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 1em 1.5em; margin: 1.5em 0; }
+    .related-sample h4 { margin: 0 0 0.5em; color: #075985; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="./" class="site-title">業務システム支援</a>
+      <nav class="site-nav">
+        <a href="index.html#services">サービス</a>
+        <a href="index.html#works">実績</a>
+        <a href="index.html#about">プロフィール</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <a class="back-link" href="index.html#services">← サービス一覧に戻る</a>
+        <h1>配送日報Web化 サンプル成果物</h1>
+        <p class="case-meta">
+          <span>想定クライアント: 食品卸（架空・従業員28名）</span>
+          <span>納品物: 5ドキュメント＋画面設計</span>
+          <span>標準期間: 約6週間</span>
+        </p>
+
+        <div class="related-sample">
+          <h4>このサンプルの位置づけ</h4>
+          <p style="margin: 0;">
+            <a href="sample-business-analysis.html">業務整理パックサンプル</a>と同じ架空クライアント「株式会社マルキ食品」の続編として、
+            整理の結果として先行で着手することにした<strong>配送日報のWeb化</strong>を題材にしています。
+            ドキュメント納品物（業務整理パック）と<strong>実装直前の設計成果物</strong>（本サンプル）の2軸で、
+            支援の流れを通して読めます。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>このサンプルの目的</h3>
+          <p>
+            「Excel・紙運用のWeb化を依頼すると、どんな成果物が手元に残るのか」を、
+            要件定義から段階リリース計画まで一連で示すためのページです。
+          </p>
+          <p>
+            実案件では、業種・規模・既存システム（kintone・FileMaker・オンプレ販売管理など）に応じて
+            内容は変わりますが、<strong>「整理 → 小さく実装 → 段階リリース」</strong>という構成は共通です。
+          </p>
+        </div>
+
+        <div class="sample-toc">
+          <strong>このページの構成</strong>
+          <ol>
+            <li><a href="#requirements">要件定義（現状とゴール）</a></li>
+            <li><a href="#screens">画面設計（入力／一覧／CSV出力）</a></li>
+            <li><a href="#data">データ設計（ER図と権限）</a></li>
+            <li><a href="#ai">AI活用ポイント（効く／部分的／効かない）</a></li>
+            <li><a href="#release">段階リリース計画（6週間・3版）</a></li>
+            <li><a href="#downloads">ダウンロード</a></li>
+          </ol>
+        </div>
+
+        <div class="case-section" id="requirements">
+          <h3>1. 要件定義（現状とゴール）</h3>
+          <p>業務整理パックの結果、第1期と並行して配送日報のWeb化を先行で着手する、という想定です。</p>
+
+          <h4>現状（Before）</h4>
+          <ul>
+            <li>配送員：手書きの紙日報（A4横、1日1枚）</li>
+            <li>事務担当：翌朝Excelに転記（毎日30〜45分）</li>
+            <li>保管：紙はバインダー、Excelは月別ファイル</li>
+            <li>活用：月次集計でしか見ていない（個別日報は転記後に埋もれる）</li>
+          </ul>
+
+          <h4>ゴール（数字目標）</h4>
+          <table class="sample-table">
+            <thead>
+              <tr><th>指標</th><th>現状</th><th>目標</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>事務の転記作業時間</td><td>30〜45分／日</td><td><strong>0分（廃止）</strong></td></tr>
+              <tr><td>転記ミスによる修正対応</td><td>月数件</td><td><strong>月0件（転記そのものを廃止）</strong></td></tr>
+              <tr><td>過去日報の検索時間</td><td>数十分〜数時間</td><td><strong>30秒以内</strong></td></tr>
+              <tr><td>ベテラン日報の引き継ぎ用テキスト化</td><td>できていない</td><td><strong>AI要約で日次・週次の自動生成</strong></td></tr>
+            </tbody>
+          </table>
+
+          <div class="sample-callout">
+            <strong>このサンプルの差別化ポイント：</strong>
+            「Web化したから、ついでにAIも全部入れる」とはしません。<strong>転記廃止と蓄積基盤を先に確立し、
+            データが溜まってからAIを差し込む</strong>段階設計です。
+          </div>
+        </div>
+
+        <div class="case-section" id="screens">
+          <h3>2. 画面設計（3画面）</h3>
+          <p>配送員はほぼ「入力画面」だけを使う、シンプルな3画面構成です。</p>
+
+          <figure class="sample-figure">
+            <object type="image/svg+xml" data="samples/daily-report/assets/01-input-screen.svg" aria-label="日報入力画面のワイヤーフレーム"></object>
+            <figcaption>図1：S1 日報入力画面（スマホ／タブレット）</figcaption>
+          </figure>
+
+          <figure class="sample-figure">
+            <object type="image/svg+xml" data="samples/daily-report/assets/01-list-screen.svg" aria-label="日報一覧・検索画面のワイヤーフレーム"></object>
+            <figcaption>図2：S2 日報一覧・検索画面（事務／管理者向け）</figcaption>
+          </figure>
+
+          <figure class="sample-figure">
+            <object type="image/svg+xml" data="samples/daily-report/assets/01-csv-export.svg" aria-label="CSV出力ダイアログのワイヤーフレーム"></object>
+            <figcaption>図3：S3 CSV出力（既存Excel書式互換）</figcaption>
+          </figure>
+
+          <h4>設計の核</h4>
+          <ul>
+            <li><strong>入力項目を最小化</strong> — 配送員は片手・グローブ越し・休憩中に打つ前提</li>
+            <li><strong>マスタはプルダウン＋予測候補</strong> — 手入力は「特記事項」だけに集約</li>
+            <li><strong>通信切れに耐える</strong> — ローカル保存→復帰時に同期</li>
+            <li><strong>既存Excelと1件もズレないCSV</strong> — Shift_JIS対応・列順固定で既存マクロを壊さない</li>
+          </ul>
+        </div>
+
+        <div class="case-section" id="data">
+          <h3>3. データ設計（ER図と権限）</h3>
+          <p>「現場入力できる」「Excelに戻せる」「AIに渡せる」を満たす最小構成のデータモデルです。</p>
+
+          <figure class="sample-figure">
+            <object type="image/svg+xml" data="samples/daily-report/assets/02-er-diagram.svg" aria-label="配送日報のER図"></object>
+            <figcaption>図4：ER図（主要7テーブル＋AI第2版以降の `report_summaries`）</figcaption>
+          </figure>
+
+          <h4>権限設計（最低限）</h4>
+          <table class="sample-table">
+            <thead>
+              <tr><th>ロール</th><th>自分の日報</th><th>他人の日報</th><th>マスタ編集</th><th>CSV出力</th><th>AI要約</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>driver（配送員）</td><td>入力／当日中の編集</td><td>不可</td><td>不可</td><td>不可</td><td>自分のみ閲覧</td></tr>
+              <tr><td>office（事務）</td><td>閲覧</td><td>閲覧／検索</td><td>不可</td><td>可</td><td>閲覧</td></tr>
+              <tr><td>admin（管理者）</td><td>閲覧／編集</td><td>閲覧／編集</td><td>可</td><td>可</td><td>閲覧／再生成</td></tr>
+            </tbody>
+          </table>
+          <p style="font-size: 0.9em; color: #666;">編集ログは別テーブルに記録（日報の修正履歴は紙時代より厳格に追える）。</p>
+        </div>
+
+        <div class="case-section" id="ai">
+          <h3>4. AI活用ポイント</h3>
+          <p>AI機能は3つに絞り、第1版には入れず、データが溜まってから後乗せします。</p>
+
+          <table class="sample-table">
+            <thead>
+              <tr><th>#</th><th>機能</th><th>効き方</th><th>入れる順番</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A1</td><td>日報要約（日次・週次・ドライバ別）</td><td><span class="ai-tag ai-strong">強く効く</span></td><td>第2版</td></tr>
+              <tr><td>A2</td><td>自然文での過去日報検索</td><td><span class="ai-tag ai-strong">強く効く</span></td><td>第2版</td></tr>
+              <tr><td>A3</td><td>異常値・気になる兆候のハイライト</td><td><span class="ai-tag ai-partial">部分的</span></td><td>第3版</td></tr>
+            </tbody>
+          </table>
+
+          <div class="sample-callout">
+            <strong>AIで「しないこと」も明示します：</strong>
+            配送ルートの自動最適化（運用ドメインが別）、配送員の評価・査定への自動利用（労務リスク）、
+            AI生成文章を顧客に直接出すこと。<strong>「AIが効かない領域・乗せてはいけない領域」を正直に示す</strong>のが、
+            この支援の差別化ポイントです。
+          </div>
+        </div>
+
+        <div class="case-section" id="release">
+          <h3>5. 段階リリース計画（6週間・3版）</h3>
+          <p>「全部入りで半年」ではなく、<strong>2週間ごとに使える物が増える</strong>設計です。</p>
+
+          <div class="phase-box">
+            <h4>第1版（〜2週目末）：転記廃止が成立する最小構成</h4>
+            <p>入力＋一覧＋CSV出力。配送員2名で先行運用、紙日報と並行。<strong>事務の転記作業が「先行運用ぶん」だけ消える</strong>。AIはまだ入れない。</p>
+          </div>
+
+          <div class="phase-box">
+            <h4>第2版（3〜4週目）：全員展開とAI第1段</h4>
+            <p>配送員8名全員に展開、紙日報廃止。AI日報要約と自然文検索を追加。<strong>事務の転記作業がゼロになり、過去日報の検索が30秒以内に</strong>。</p>
+          </div>
+
+          <div class="phase-box">
+            <h4>第3版（5〜6週目）：異常検知と運用磨き込み</h4>
+            <p>異常検知ハイライト、月次レポートPDF生成、ベテラン配送員のドライバ別サマリ。<strong>業務整理パック第1期「配送ルート知識のAI抽出」と素材が連動</strong>する。</p>
+          </div>
+
+          <p style="margin-top: 1em;">各フェーズの終わりに <strong>意思決定ポイント</strong> を置き、止めるか進むかを判断できる構成にしています。</p>
+        </div>
+
+        <div class="case-section" id="downloads">
+          <h3>6. 納品物の詳細（ダウンロード）</h3>
+          <p>各ドキュメントの詳細は以下からご覧いただけます。</p>
+          <div class="download-list">
+            <ul>
+              <li><a href="samples/daily-report/00-requirements.md">00. 要件定義メモ</a> — 現状・ゴール・対応範囲・想定スタック</li>
+              <li><a href="samples/daily-report/01-screen-design.md">01. 画面設計</a> — 入力／一覧／CSV出力の設計思想と項目定義</li>
+              <li><a href="samples/daily-report/02-data-design.md">02. データ設計</a> — テーブル定義・権限・移行方針</li>
+              <li><a href="samples/daily-report/03-ai-usage.md">03. AI活用ポイント</a> — 要約／自然文検索／異常検知の効き方</li>
+              <li><a href="samples/daily-report/04-release-plan.md">04. 段階リリース計画</a> — 6週間・3版・意思決定ポイント</li>
+              <li><a href="samples/daily-report/README.md">README</a> — このサンプルの読み方</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.9em; color: #666;">
+            ※ Markdown 形式です。GitHub 上 または VSCode の Markdown プレビューで図表含めて表示されます。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>このサンプルから読み取っていただきたいこと</h3>
+          <ul>
+            <li><strong>整理から実装に自然に接続している</strong> — 業務整理パックで描いた計画の中から、先行で効くものを切り出しています</li>
+            <li><strong>AIを第1版に入れていない</strong> — 蓄積基盤を先に作ることで、AIを乗せたときに精度が出る構造</li>
+            <li><strong>既存Excelと1件もズレない移行</strong> — 「Web化したらExcelが壊れた」を絶対に起こさない設計</li>
+            <li><strong>2週間ごとに使える物が増える</strong> — 途中で止めてもそれまでの分は業務改善として残ります</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <p>
+            実際のご相談は <a href="index.html#contact">お問い合わせ</a> からお願いします。
+            既存のExcel・紙運用、kintone、FileMaker、オンプレシステムなど、
+            <strong>「いま動いているもの」を壊さずにWeb化する設計</strong>からご対応します。
+            無料相談（30〜60分）で論点の絞り込みだけでも対応可能です。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> 業務システム支援</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
