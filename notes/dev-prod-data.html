@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中小企業の現場で、データ取扱いをどう決めるか | 業務システム支援</title>
+  <meta name="description" content="業務整理・Web化・AI活用支援で中小企業の現場に入るとき、最初に確認する論点のひとつにデータの取扱いがあります。「絶対に置かない」より、アクセス権・持ち出し・ログ・AI利用・Token管理を会社管理下で明文化することのほうが、現場で実効的に回ります。" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSGY8PW4ZS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YSGY8PW4ZS');
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../" class="site-title">業務システム支援</a>
+      <nav class="site-nav">
+        <a href="../index.html#services">サービス</a>
+        <a href="../index.html#works">実績</a>
+        <a href="../notes.html">現場ノート</a>
+        <a href="../index.html#about">プロフィール</a>
+        <a href="../index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <a class="back-link" href="../notes.html">← 現場ノート一覧に戻る</a>
+        <h1>中小企業の現場で、データ取扱いをどう決めるか</h1>
+        <p class="case-meta">
+          <span>カテゴリ: 現場ノート</span>
+          <span>テーマ: 業務改善とデータ取扱い</span>
+        </p>
+
+        <div class="case-section">
+          <p>
+            業務整理・Web化・AI活用支援で中小企業の現場に入るとき、
+            最初の方で必ず確認する論点のひとつに「データの取扱い」があります。
+            検証や改修のために本番データをどう扱うか、扱うとしたら何を決めておくか。
+            セキュリティ系の入門記事や技術誌では
+            「開発環境には本番データを絶対に入れない」というセオリーが
+            繰り返し言われます。原則としては正しい話ですが、
+            これを画一的なルールに仕立てて中小規模の開発現場に当てはめると、
+            実装も運用もうまく回りません。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>「絶対に置かない」だけでは、現場で機能しないこと</h3>
+          <p>
+            開発・検証用に本番相当のテストデータを別途用意するには、
+            マスキング設計、データ生成、整合性維持に相応のコストがかかります。
+            中小規模では専任のデータ管理者を置けないことが多く、
+            全面的な回避ルールを運用に落とし込むだけの人手がないのが実情です。
+          </p>
+          <p>
+            その結果として起きやすいのが、検証不足のままリリースして
+            本番で事故るパターン、あるいは「禁止」を建前にして
+            実際は黙って本番データを置いている、という運用です。
+            後者は明文化されていない分だけ統制が効かず、
+            実はもっとも好ましくない状態になります。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>問うべきは「絶対回避」ではなく「統制下で運用しているか」</h3>
+          <p>
+            検証で本番データを扱うこと自体ではなく、
+            扱うときに何を決めているかが本質だと考えています。
+            最低限、次の5項目が会社管理下で明文化されていれば、
+            リスクは管理可能な範囲に収まります。
+          </p>
+          <ul>
+            <li><strong>アクセス権</strong>：そのデータに誰が触れられるか。属人的にならない形で限定されているか</li>
+            <li><strong>持ち出し</strong>：手元PC・USB・私物クラウド・個人メールに流れていないか</li>
+            <li><strong>ログ</strong>：いつ・誰が・何を参照したかを後から確認できるか</li>
+            <li><strong>AI利用</strong>：そのデータを外部の生成AIに投げる線引きはあるか。社内利用に限定されるか</li>
+            <li><strong>Token管理</strong>：認証情報・APIキー・接続情報の取扱いと共有方法は決まっているか</li>
+          </ul>
+          <p>
+            これらが決まっていないまま「置かない」だけを唱えても、
+            実効性は薄いと感じます。建前と運用がずれた瞬間に、統制は崩れます。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>Token保護とgit管理は、別軸の前提</h3>
+          <p>
+            一方で、認証情報・APIキーをgitリポジトリに含めない、
+            開発機のCredentialを保護する、というのは規模を問わない前提です。
+            ここが甘いと、本番データを置く・置かないと無関係に、
+            開発機そのものが本番環境への攻撃経路になります。
+          </p>
+          <p>
+            この層は、画一的に強く守ってよい領域です。本番データの取扱いの議論と、
+            Credential保護の議論を、同じ強度のルールで扱うと論点が雑になります。
+            分けて考えたほうが、現場で実装可能なルールになります。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>現場での進め方</h3>
+          <p>
+            業務整理・Web化・AI活用支援で現場に入るとき、
+            データの取扱いはなるべく初期に確認します。
+            「本番データを開発で扱うか / 扱わないか」という二択ではなく、
+            「扱うとしたら統制をどうするか」を、
+            現場の規模・体制・コストに合わせて決めていく形です。
+          </p>
+          <p>
+            中小規模なら中小規模なりの、現実的な線引きを引く。
+            「画一的なルール」と「実装可能な現場の運用」のあいだを埋めるのは、
+            業務理解と現場感覚があってはじめてできる仕事だと考えています。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <p>
+            データ取扱い・改修・AI導入の前段で論点が整理しきれていない、
+            という段階のご相談を歓迎します。
+            <a href="../index.html#contact">お問い合わせ</a>
+            からお気軽にご連絡ください。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> 業務システム支援</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

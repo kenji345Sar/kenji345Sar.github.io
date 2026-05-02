@@ -473,6 +473,59 @@ a:hover {
   font-size: 0.9rem;
 }
 
+/* Audience links group (stacked links inside a card) */
+.audience-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+}
+.audience-links .works-link {
+  margin-top: 0;
+}
+
+/* Guide list (shared by guide-systems / guide-tools / guide-specialists) */
+.guide-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+.guide-list > li {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.guide-list > li > strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+.guide-list > li > .guide-meta {
+  display: block;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+.guide-list > li > p {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+.guide-list .guide-status {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--color-bg-alt);
+  color: var(--color-muted);
+  margin-right: 6px;
+}
+.guide-list .guide-status-ready {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 /* Case detail page */
 .back-link {
   display: inline-block;

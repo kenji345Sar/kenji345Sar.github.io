@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>現場ノート | 業務システム支援</title>
+  <meta name="description" content="業務改善・Web化・AI活用支援で中小企業の現場に入る中で考えていることを、トピックごとに整理しています。" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSGY8PW4ZS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YSGY8PW4ZS');
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="./" class="site-title">業務システム支援</a>
+      <nav class="site-nav">
+        <a href="index.html#services">サービス</a>
+        <a href="index.html#works">実績</a>
+        <a href="index.html#notes">現場ノート</a>
+        <a href="index.html#about">プロフィール</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <a class="back-link" href="index.html">← トップに戻る</a>
+        <h1>現場ノート</h1>
+        <p>
+          業務整理・Web化・AI活用支援で中小企業の現場に入る中で考えていることを、
+          トピックごとに整理しています。
+        </p>
+
+        <ul class="works">
+          <li>
+            <strong>AIを業務に組み込むとき、商用に耐えるプロセスをどう設計するか</strong>
+            <span>テーマ: AI活用と商用品質</span>
+            <p>
+              「AIで書いたコードは商用に値しない」と言われる場面で、不安の正体
+              （ハルシネーション、エッジケース、古いパターン、セキュリティ漏れ）を分解。
+              解決の半分はツールで機械化でき、残り半分は業務知識・エンジニア経験・
+              セキュリティ知識・検証習慣の組み合わせ。商用品質はAI使用の有無ではなく、
+              この判断の土台で決まる、というスタンスを整理しています。
+            </p>
+            <a class="works-link" href="notes/ai-commercial-process.html">記事を読む →</a>
+          </li>
+          <li>
+            <strong>中小企業の現場で、データ取扱いをどう決めるか</strong>
+            <span>テーマ: 業務改善とデータ取扱い</span>
+            <p>
+              検証や改修のために本番データをどう扱うか。
+              「置かない」だけでは中小規模の現場では運用が回らないという現場感覚と、
+              アクセス権・持ち出し・ログ・AI利用・Token管理を会社管理下で明文化することのほうが
+              実効的だ、というスタンスを整理しています。
+            </p>
+            <a class="works-link" href="notes/dev-prod-data.html">記事を読む →</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> 業務システム支援</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

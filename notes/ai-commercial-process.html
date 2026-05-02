@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIを業務に組み込むとき、商用に耐えるプロセスをどう設計するか | 業務システム支援</title>
+  <meta name="description" content="「AIで書いたコードは商用に値しない」と言われる場面で、人が判断する仕事の中身——機械化できる部分と、業務知識・エンジニア経験・セキュリティ知識・検証習慣の組み合わせ——を分解。商用品質はAI使用の有無ではなく、この判断の土台で決まる、というスタンスを整理しています。" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSGY8PW4ZS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YSGY8PW4ZS');
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../" class="site-title">業務システム支援</a>
+      <nav class="site-nav">
+        <a href="../index.html#services">サービス</a>
+        <a href="../index.html#works">実績</a>
+        <a href="../notes.html">現場ノート</a>
+        <a href="../index.html#about">プロフィール</a>
+        <a href="../index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <a class="back-link" href="../notes.html">← 現場ノート一覧に戻る</a>
+        <h1>AIを業務に組み込むとき、商用に耐えるプロセスをどう設計するか</h1>
+        <p class="case-meta">
+          <span>カテゴリ: 現場ノート</span>
+          <span>テーマ: AI活用と商用品質</span>
+        </p>
+
+        <div class="case-section">
+          <p>
+            業務整理・Web化・AI活用支援で中小企業の現場に入るとき、
+            AIの話題になると「AIで書いたコードを商用に使えるのか」という問いが
+            出る場面があります。要件が固まっているかどうかとは関係なく、出てきます。
+          </p>
+          <p>
+            この発言の前提にあるのは「人が書く＝判断ができる」という考え方です。
+            ただ、そう言う人に「商用品質とは具体的に何ですか」「セキュリティとは
+            何を見るのですか」と問い返すと、答えられないことが少なくない。
+            実体としては、これは<strong>見えない対象への不安</strong>から出ている発言で、
+            商用品質を本当に担保しているものは別のところにあります。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>「人が判断する」の中身を分解する</h3>
+          <p>
+            「AIで書いたコードは不安だ」という感覚は、漠然としたままだと議論が進みません。
+            その不安を分解すると、おおむね次の4つに集約されます。
+          </p>
+
+          <p>
+            <strong>ハルシネーション</strong>。存在しないAPIや関数を含むコードが
+            生成されることがあります。これは実行確認、Linter／型チェック、
+            公式ドキュメント照合で検出できます。気づくには、使用している言語・
+            フレームワークの実体験と、リファレンスを引く習慣が必要です。
+          </p>
+
+          <p>
+            <strong>エッジケース取りこぼし</strong>。NULL、年度跨ぎ、文字コード、
+            過去にトラブルになった入力パターンなど、業務上ありうる例外を
+            AIが網羅できないことがあります。気づくには、その業務での実データの傾向、
+            過去のトラブル履歴、業務担当者にヒアリングできる能力が要ります。
+          </p>
+
+          <p>
+            <strong>古いライブラリ・非推奨パターンの混入</strong>。トレーニングデータが
+            古いと、現在は推奨されない書き方や、すでに脆弱性が出ているバージョンを
+            使ったコードが混じることがあります。依存関係チェッカーで機械的に検出する
+            ほか、フレームワークの最新動向や deprecation の感覚を持っていれば気づけます。
+          </p>
+
+          <p>
+            <strong>セキュリティ実装の漏れ</strong>。SQLインジェクション、XSS、
+            認証認可の漏れなどが起きえます。SAST/DASTやOWASP Top 10のチェックリスト
+            適用で多くは網羅できますが、何が攻撃面で何を守るべきかの判断は、
+            攻撃パターンの知識と業務上の脅威モデリングの組み合わせが必要です。
+          </p>
+
+          <p>
+            こうして分解すると見えてくるのは、<strong>解決の半分くらいはツールで
+            機械的にできる仕事</strong>だということです。Linter、型チェック、
+            依存関係スキャナ、SAST/DAST、自動テスト。これらはAIの登場で
+            必要になったわけではなく、以前から必要だったもの。AIで書く量が
+            増えたことで、その重要性が顕在化しただけです。
+          </p>
+
+          <p>
+            残り半分は、判断する人の知識と習慣の話です。
+          </p>
+          <ul>
+            <li><strong>業務知識</strong>：そのデータがどう使われるか、過去どう壊れたか</li>
+            <li><strong>エンジニアリング経験</strong>：言語・フレームワークの定石と落とし穴</li>
+            <li><strong>セキュリティ知識</strong>：攻撃パターンと対策の引き出し</li>
+            <li><strong>検証する習慣</strong>：リファレンスを引く、動かす、要件と照合する</li>
+          </ul>
+          <p>
+            これらを組み合わせて、出てきたコードを業務に照らして検証する。
+            これが、現場で「人が判断する」と言うときの実体です。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>商用品質はどこで決まるか</h3>
+          <p>
+            ここまで分解すると、最初の問いに戻れます。
+          </p>
+          <p>
+            「AIで書いたから商用に値しない」と言う人は、人が書いたコードを
+            「人が判断したコード」として暗黙に評価しています。しかし、
+            上に挙げた判断の中身を持っていない人が書いたコードは、
+            人が書いていても商用には耐えません。逆に、その判断能力を持つ人が
+            AIと一緒に書いていれば、商用に耐えます。AIが出したコードを
+            業務に照らして検証し、ツールで機械的にチェックし、経験で違和感に気づく。
+            書いたのが人かAIかは、商用品質の本質ではありません。
+          </p>
+          <p>
+            「AIで書いたから商用に値しない」が現場で繰り返されるのは、
+            業務理解と要件整理が固まっていないままAIに書かせて、
+            検証する基準もないまま動かして事故る、というパターンが
+            実際に起きているからです。問題はAIではなく、判断の土台がないこと。
+            それを「AIのせい」と短絡しているのが、現場で起きていることだと思います。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>現場での進め方</h3>
+          <p>
+            業務整理・Web化・AI活用支援で現場に入るとき、AIを入れるかどうかの
+            議論より先に、業務知識を引き出して要件を整理することに時間を使います。
+            要件が固まっていれば、出てきたコードを照合できる。検証の習慣と
+            使うべきツールを一緒に整えれば、AIで書こうが人で書こうが、
+            商用に乗せられる土台になります。
+          </p>
+          <p>
+            中小規模なら中小規模なりの、現実的な範囲で。教科書的な完成形と、
+            実装可能な現場運用のあいだを埋めるのが、この仕事の中身だと考えています。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <p>
+            AI活用・業務改修・データ取扱いの前段で論点が整理しきれていない、
+            という段階のご相談を歓迎します。
+            <a href="../index.html#contact">お問い合わせ</a>
+            からお気軽にご連絡ください。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> 業務システム支援</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
