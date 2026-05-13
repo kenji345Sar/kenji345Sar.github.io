@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>社内業務の効率化・連携対応 | 業務改善・システム化支援</title>
-  <meta name="description" content="Excelや紙で回っていた申請・稟議系業務をkintoneとLaravel APIで整理し、VBA補助・レガシー保守を並行で進めた事例。" />
+  <meta name="description" content="9ヶ月の期間中、Laravel API・kintone・VBA・PHP4/Oracle 保守を含む9種類の技術を使い分け、4つの業務テーマを並行で担当した事例。" />
   <link rel="stylesheet" href="assets/style.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSGY8PW4ZS"></script>
@@ -36,71 +36,73 @@
         <h1>社内業務の効率化・連携対応</h1>
         <p class="case-meta">
           <span>期間: 約9ヶ月</span>
-          <span>技術: Laravel 8 / PHP / kintone / VBA / JavaScript / Oracle / MySQL</span>
-          <span>チーム: 3名</span>
-          <span>担当工程: 要件定義〜保守運用(全工程)</span>
+          <span>体制: 全体3名</span>
+          <span>使用技術: Laravel 8 / PHP / kintone / desknet's / VBA / JavaScript / Oracle / MySQL / CentOS</span>
         </p>
 
         <div class="case-section">
           <h3>案件概要</h3>
           <p>
-            業務ごとに Excel・紙・独立したシステムが混在し、二重入力や手作業が
-            発生していた状態から、申請・稟議系業務の Web 化と、既存業務・既存システム
-            との連携整理を進めた案件です。
+            9ヶ月の期間中、<strong>性質の異なる4つの業務テーマを並行で担当</strong>。
+            Laravel API による開発、kintone でのローコード開発、VBA によるデータ処理、
+            PHP4 / Oracle のレガシー保守まで、<strong>9種類の技術・製品を用途に応じて使い分け</strong>ながら進めた案件です。
           </p>
         </div>
 
         <div class="case-section">
-          <h3>課題</h3>
+          <h3>担当した4つの業務テーマ</h3>
           <ul>
-            <li>申請・稟議系の業務が紙や Excel 中心で、回覧や履歴追跡に手間がかかっていた</li>
-            <li>経費精算や押印など、業務ごとに独立した運用になっており、データが分散していた</li>
-            <li>既存のレガシーシステム(PHP4 / Oracle)の保守も並行して必要で、完全入れ替えは現実的ではなかった</li>
+            <li><strong>事業部門管理資料のバッチ処理化</strong> — API 作成は Laravel、フロント側は VBA で対応</li>
+            <li><strong>経費精算システムの見直し</strong> — Desknet's と kintone の連携</li>
+            <li><strong>押印簿対応</strong> — 紙での稟議・契約書運用を kintone に組み込み</li>
+            <li><strong>既存レガシーシステムの保守</strong> — PHP4 / Oracle</li>
           </ul>
         </div>
 
         <div class="case-section">
-          <h3>進め方</h3>
+          <h3>発揮した技術の幅</h3>
+          <p>1案件の期間中に、性質の異なる4つのレイヤを同時に扱いました。</p>
           <ul>
-            <li>現行業務を整理し、どこをローコード(kintone)で、どこを Laravel API で扱うかを仕分け</li>
-            <li>既存業務を止めないことを前提に、小さく切り出して順に Web 化</li>
-            <li>API・バッチ処理・VBA など、複数の手段を用途ごとに使い分けて連携</li>
+            <li><strong>モダン Web 開発</strong>：Laravel 8 による API 開発と外部システム連携</li>
+            <li><strong>ローコード</strong>：kintone でのアプリ構築・既存運用への組み込み</li>
+            <li><strong>業務補助</strong>：VBA によるデータ処理自動化、Excel 連携</li>
+            <li><strong>レガシー保守</strong>：PHP4 / Oracle の継続運用対応</li>
           </ul>
-        </div>
-
-        <div class="case-section">
-          <h3>担当範囲</h3>
-          <p>計 <strong>4つの業務テーマ</strong> を並行で担当。ローコード(kintone)と API 開発(Laravel)、レガシー保守を用途に応じて使い分けました。</p>
-          <ul>
-            <li>事業部門管理資料のバッチ処理化(Laravel API 作成、VBA 側の対応)</li>
-            <li>経費精算まわりの見直し(既存ツールと kintone との連携)</li>
-            <li>押印・稟議運用の Web 化(紙運用から kintone への移行)</li>
-            <li>既存レガシーシステム(PHP4 / Oracle)の保守対応</li>
-          </ul>
-        </div>
-
-        <div class="case-section">
-          <h3>意識したこと</h3>
-          <ul>
-            <li>ローコードと API 開発の「使い分け」。kintone で十分なものは無理に作らない</li>
-            <li>既存業務の運用リズムを崩さないよう、段階的に移行する</li>
-            <li>レガシー保守と新規開発の並行を前提に、共有できる部分は揃える</li>
-          </ul>
-        </div>
-
-        <div class="case-section">
-          <h3>今から見て</h3>
           <p>
-            こういう案件の価値は、Web 化そのものではなく、業務と既存システム・
-            既存運用をつなぎ直す部分にあると考えています。同じように
-            「全部入れ替えは難しいが、このまま回すのも厳しい」という状況に対して、
-            小さく整えていく関わり方ができます。
+            「モダン × ローコード × VBA × レガシー」を 1 名で横断できる人材は中小企業の現場で希少で、
+            ベンダー分割発注を 1 本にまとめられる強みになります。
+          </p>
+        </div>
+
+        <div class="case-section">
+          <h3>習得・活用したスキル</h3>
+          <ul>
+            <li>Laravel による API 開発と外部システム連携</li>
+            <li>kintone によるローコード開発</li>
+            <li>VBA によるデータ処理自動化</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>この経験から提供できること</h3>
+          <ul>
+            <li><strong>既存パッケージ（Desknet's / kintone 等）と既存業務を活かしたまま、足りない部分を API・連携で埋める</strong></li>
+            <li><strong>紙運用や Excel 運用を、ローコード（kintone）に乗せ替える</strong></li>
+            <li><strong>レガシーシステム（PHP4 / Oracle 等）の保守と、新規開発を並行で進める</strong></li>
+            <li><strong>1 つの契約の中で、複数の業務テーマを横断的に担当する</strong></li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>所感</h3>
+          <p>
+            API・バッチ処理による Excel 対応を経験し、ローコード開発や外部システム連携の有効性を実感した案件です。
           </p>
         </div>
 
         <div class="case-section">
           <p>
-            類似の案件・ご相談は
+            類似のご相談は
             <a href="index.html#contact">お問い合わせ</a>
             からお気軽にご連絡ください。
           </p>
